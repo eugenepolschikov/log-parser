@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <timestamp key="byDayTimestamp" datePattern="yyyy-MM-dd"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d |%-5level [%thread] %logger{120}:%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.hibernate" level="${logger.level.root:-INFO}"/>
+    <logger name="ch.qos.logback" level="${logger.level.root:-INFO}"/>
+    <logger name="org.dozer" level="${logger.level.root:-INFO}"/>
+    <logger name="org.springframework" level="${logger.level.root:-INFO}"/>
+
+    <root level="${logger.level.root:-INFO}">
+        <appender-ref ref="CONSOLE"/>
+        <!--        <appender-ref ref="ERROR-FILE"/>-->
+    </root>
+
+</configuration>
+
+
+        <!--<?xml version="1.0" encoding="UTF-8" ?>-->
+        <!--
+         Copyright (c) 2014 Global Healthcare Exchange, LLC. All rights reserved.
+         This Logback XML config have been added in scope of bamboo integration  (april 2018).
+         @TODO:  remove or adjust  after migration to Tandoori is done.
+        -->
+        <!--<configuration debug="true">-->
+        <!--<appender name="ALERTS_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>${ConfigDir}/logs/alerts.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+        <!--<fileNamePattern>${ConfigDir}/logs/alerts.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+        <!--<maxHistory>15</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+        <!--<pattern>%d{HH:mm:ss.SSS} [ALERT] %marker - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--</appender>-->
+
+        <!--<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+        <!--<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+        <!--<pattern>%d{HH:mm:ss.SSS} %thread [%-5level] %logger:%line [%marker] - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--</appender>-->
+
+        <!--<logger name="Alert" level="ERROR" additivity="false">-->
+        <!--<appender-ref ref="ALERTS_LOG"/>-->
+        <!--</logger>-->
+
+        <!--<root level="INFO">-->
+        <!--<appender-ref ref="CONSOLE"/>-->
+        <!--</root>-->
+
+        <!--&lt;!&ndash;-->
+        <!--logback.xml with final appenders and levels-->
+        <!--logback-test.xml with development settings?-->
+        <!--&ndash;&gt;-->
+
+        <!--</configuration>-->
+
+
+
+
+
